@@ -95,11 +95,7 @@ if (descuentos.find(codigo => codigo.cod === parseInt(descuentoCodigo))) {
 
 function capturarImg(nombreDeServicio) {
     if (nombreDeServicio === adquirirServicio.toLowerCase()) {
-<<<<<<< HEAD
         return `<img class="imagenesPrueba" src="../img/${nombreDeServicio.toLowerCase()}.png" alt="imagen">`
-=======
-        return `<img class="imagenesPrueba" src="../img/${nombreDeServicio}.png" alt="imagen">`
->>>>>>> 5a2297784994239b5c06063692b7a821ca59a0a3
     }
     return console.log("no existe esa img");
 }
@@ -107,14 +103,7 @@ function capturarImg(nombreDeServicio) {
 for (const servicio of servicios) {
     if (adquirirServicio.toLowerCase() === servicio.nombre.toLowerCase()) {
         var foto = document.createElement('div');
-<<<<<<< HEAD
         foto.innerHTML = capturarImg(adquirirServicio.toLowerCase());
         document.body.append(foto);
     }
 }
-=======
-        foto.innerHTML = capturarImg(adquirirServicio);
-        document.body.append(foto);
-    }
-}
->>>>>>> 5a2297784994239b5c06063692b7a821ca59a0a3
