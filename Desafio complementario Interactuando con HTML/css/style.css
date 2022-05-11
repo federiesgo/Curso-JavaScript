@@ -1,0 +1,12 @@
+@import url(https://fonts.googleapis.com/css?family=Poiret+One);
+.fuenteTexto {
+    font-family: "Poiret One";
+    text-align: center;
+}
+
+.estiloTitulo {
+    text-align: center;
+    text-decoration: solid;
+    background-color: aquamarine;
+    color: blue;
+}
