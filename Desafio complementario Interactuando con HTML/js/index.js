@@ -1,18 +1,17 @@
 const servicios = [{
         nombre: "Manicura",
         precio: 3500,
-        imagen: 0,
+        image: 'https://imgur.com/xPrIW5P',
     },
     {
         nombre: "Pestañas",
         precio: 2750,
-        imagen: 0,
+        image: 'https://imgur.com/Jlo8WZu',
     },
     {
         nombre: "Masajes",
         precio: 4000,
-        imagen: 0,
-
+        image: 'https://imgur.com/6J3QxaT',
     },
 ]
 
@@ -69,7 +68,7 @@ while (!(servicios.some(servicio => servicio.nombre.toLowerCase() === adquirirSe
 }
 
 let parrafoServicioSeleccionado = document.createElement("p");
-parrafoServicioSeleccionado.innerHTML = `<h1 class="estiloTitulo"> Usted ha elegido el servicio ${adquirirServicio.toLowerCase()} </h1>`;
+parrafoServicioSeleccionado.innerHTML = `<h1 class="estiloTitulo"> Usted ha elegido el servicio ${adquirirServicio.toLowerCase()}</h1>`;
 document.body.append(parrafoServicioSeleccionado);
 
 const descuentoCodigo = prompt('Si usted posee un código de descuento, por favor ingréselo aquí');
@@ -92,4 +91,19 @@ if (descuentos.find(codigo => codigo.cod === parseInt(descuentoCodigo))) {
     let parrafoIvaSinDescuento = document.createElement("p");
     parrafoIvaSinDescuento.innerHTML = `<h3 class="fuenteTexto"> El código de descuento ingresado no existe. Incluyendo el impuesto IVA, su contratación tendra un costo de: AR$${costeTotal} </h3>`;
     document.body.append(parrafoIvaSinDescuento);
+}
+
+function capturarImg(nombreDeServicio) {
+    if (nombreDeServicio === adquirirServicio.toLowerCase()) {
+        return `<img class="imagenesPrueba" src="../img/${nombreDeServicio}.png" alt="imagen">`
+    }
+    return console.log("no existe esa img");
+}
+
+for (const servicio of servicios) {
+    if (adquirirServicio.toLowerCase() === servicio.nombre.toLowerCase()) {
+        var foto = document.createElement('div');
+        foto.innerHTML = capturarImg(adquirirServicio);
+        document.body.append(foto);
+    }
 }
