@@ -1,17 +1,17 @@
 const servicios = [{
         nombre: "Manicura",
         precio: 3500,
-        imagen:
+        imagen: 0,
     },
     {
         nombre: "Pestañas",
         precio: 2750,
-        imagen:
+        imagen: 0,
     },
     {
         nombre: "Masajes",
         precio: 4000,
-        imagen:
+        imagen: 0,
 
     },
 ]
