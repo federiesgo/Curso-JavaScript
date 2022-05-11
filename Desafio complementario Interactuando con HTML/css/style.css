@@ -10,3 +10,16 @@
     background-color: aquamarine;
     color: blue;
 }
+
+.imagenesPrueba {
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.colorFondo {
+    background-color: bisque;
+}
