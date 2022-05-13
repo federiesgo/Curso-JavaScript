@@ -2,6 +2,11 @@
 .fuenteTexto {
     font-family: "Poiret One";
     text-align: center;
+    font-weight: 1000;
+}
+
+h2 .fuenteTexto {
+    font-size: medium;
 }
 
 .estiloTitulo {
