@@ -23,8 +23,3 @@
 .colorFondo {
     background-color: bisque;
 }
-
-.ordenarBotones {
-    display: flex;
-    justify-items: center;
-}
