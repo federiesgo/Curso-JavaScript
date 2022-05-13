@@ -55,22 +55,16 @@ function calcularDescuento(precio, descuento) {
 }
 
 
-let textoIndex1 = document.createElement("div");
-textoIndex1.innerHTML = `<h1 class="estiloTitulo">Bienvenido a Empar Spa</h1>
-                            <h3 class="fuenteTexto">Por favor, haga click en el servicio que desea contratar</h3>`;
+let textoIndex1 = document.createElement("h1");
+textoIndex1.innerHTML = `Bienvenido a Empar Spa`;
+textoIndex1.className = "estiloTitulo";
 document.body.append(textoIndex1);
 
-
-let parrafoServicioSeleccionado = document.createElement("p");
-let parrafoDescuentoAplicadoConIVA = document.createElement("p");
-let parrafoIvaSinDescuento = document.createElement("p");
-let parrafoDescuentoAplicado = document.createElement("p");
+let parrafo = document.createElement("p");
+parrafo.className = "fuenteTexto";
+let tituloServicioSeleccionado = document.createElement("h1");
+tituloServicioSeleccionado.className = "estiloTitulo";
 let divParaBotones = document.createElement("div");
-
-
-
-
-
 
 for (const servicio of servicios) {
     divParaBotones.innerHTML += `
@@ -86,35 +80,30 @@ for (const servicio of servicios) {
 
 }
 
-// :D
-
 divParaBotones.className = "ordenarBotones";
 document.body.append(divParaBotones);
 
 function respuestaClick(servicio) {
     adquirirServicio = servicio;
     const descuentoCodigo = prompt('Si usted posee un código de descuento, por favor ingréselo aquí');
-    parrafoServicioSeleccionado.innerHTML = `<h1 class="estiloTitulo"> Usted ha elegido el servicio ${servicio.toLowerCase()}</h1>`;
-    document.body.append(parrafoServicioSeleccionado);
+    tituloServicioSeleccionado.innerHTML = `Usted ha elegido el servicio ${servicio.toLowerCase()}`;
+    document.body.append(tituloServicioSeleccionado);
     aplicandoDescuentos(descuentoCodigo);
 }
-
 
 function aplicandoDescuentos(descuentoCodigo) {
     if (descuentos.find(codigo => codigo.cod === parseInt(descuentoCodigo))) {
         let index = descuentos.findIndex(codigo => codigo.cod === parseInt(descuentoCodigo));
         const costeTotal = calcularIVA(servicios.find(servicio => servicio.nombre.toLowerCase() === adquirirServicio.toLowerCase()));
 
-
-        parrafoDescuentoAplicado.innerHTML = `<h3 class="fuenteTexto"> Felicitaciones usted ha ingresado el descuento ${descuentos[index].tipoDeDescuento}. El mismo es válido por un total de ${descuentos[index].cantDescuento} menos en su contratación! </h3>`;
-        document.body.append(parrafoDescuentoAplicado);
-        parrafoDescuentoAplicadoConIVA.innerHTML = `<h3 class="fuenteTexto"> Incluyendo el impuesto IVA y el descuento aplicado, su contratación tendra un costo de: AR$ ${calcularDescuento(costeTotal, descuentos[index].descuento)} </h3>`;
-        document.body.append(parrafoDescuentoAplicadoConIVA);
+        parrafo.innerHTML = `Felicitaciones usted ha ingresado el descuento ${descuentos[index].tipoDeDescuento}. El mismo es válido por un total de ${descuentos[index].cantDescuento} menos en su contratación! 
+        Incluyendo el impuesto IVA y el descuento aplicado, su contratación tendra un costo de: AR$ ${calcularDescuento(costeTotal, descuentos[index].descuento)}`;
+        document.body.append(parrafo);
 
     } else {
         const costeTotal = calcularIVA(servicios.find(servicio => servicio.nombre.toLowerCase() === adquirirServicio.toLowerCase()));
-        parrafoIvaSinDescuento.innerHTML = `<h3 class="fuenteTexto"> El código de descuento ingresado no existe. Incluyendo el impuesto IVA, su contratación tendra un costo de: AR$${costeTotal} </h3>`;
-        document.body.append(parrafoIvaSinDescuento);
+        parrafo.innerHTML = `El código de descuento ingresado no existe. Incluyendo el impuesto IVA, su contratación tendra un costo de: AR$${costeTotal}`;
+        document.body.append(parrafo);
     }
 }
 
