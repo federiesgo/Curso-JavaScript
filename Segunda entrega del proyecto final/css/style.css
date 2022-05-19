@@ -1,0 +1,52 @@
+@import url(https://fonts.googleapis.com/css?family=Poiret+One);
+.fuenteTexto {
+    font-family: "Poiret One";
+    text-align: center;
+    font-weight: 1000;
+}
+
+h2 .fuenteTexto {
+    font-size: medium;
+}
+
+.estiloTitulo {
+    text-align: center;
+    text-decoration: solid;
+    background-color: aquamarine;
+    color: blue;
+}
+
+.imagenesPrueba {
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.colorFondo {
+    background-color: bisque;
+}
+
+.ordenarBotones {
+    display: flex;
+    justify-items: center;
+}
+
+.centerInput {
+    text-align: center;
+    text-decoration: solid;
+    background-color: aquamarine;
+    color: blue;
+}
+
+.achicandoImg {
+    width: 80%;
+    height: 80%;
+}
+
+.tamanoBoton {
+    height: 200px;
+    width: 200px;
+}
