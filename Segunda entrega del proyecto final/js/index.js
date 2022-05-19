@@ -108,7 +108,7 @@ function guardarCodigoDescuento() {
         let botonFinal = document.createElement("div");
         botonFinal.className = "centerInput"
         botonFinal.innerHTML = `<h2> Haga click en el carrito para mostrar el precio final </h2>
-        <button onclick="clickBotonFinal()" class="tamanoBoton" type="button"><img class="achicandoImg" src="../img/carritoPrecioFinal.png" alt=""></button>`
+        <button onclick="clickBotonFinal()" class="tamanoBoton" type="submit"><img class="achicandoImg" src="../img/carritoPrecioFinal.png" alt=""></button>`
         document.body.append(botonFinal);
         botonAccionado++;
     }
