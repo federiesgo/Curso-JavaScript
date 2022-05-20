@@ -43,13 +43,6 @@ const descuentos = [{
 ]
 
 
-
-let adquirirServicio = "";
-let contadorInputDescuento = 0;
-let contadorServicioSeleccionado = 0;
-let botonAccionado = 0;
-let desc = 0;
-
 function calcularIVA(servicio) {
     return servicio.precio * 1.21;
 }
@@ -59,78 +52,116 @@ function calcularDescuento(precio, descuento) {
 }
 
 
-let textoIndex1 = document.createElement("h1");
-textoIndex1.innerHTML = `Bienvenido a Empar Spa`;
-textoIndex1.className = "estiloTitulo";
-document.body.append(textoIndex1);
+function creandoTitulo() {
+    let textoIndex1 = document.createElement("h1");
+    textoIndex1.innerHTML = `Bienvenido a Empar Spa`;
+    textoIndex1.className = "estiloTitulo";
+    document.body.append(textoIndex1);
+}
+
+creandoTitulo();
 
 let parrafo = document.createElement("p");
-parrafo.className = "fuenteTexto";
 let tituloServicioSeleccionado = document.createElement("h1");
-tituloServicioSeleccionado.className = "estiloTitulo";
 let divParaBotones = document.createElement("div");
 
-for (const servicio of servicios) {
-    divParaBotones.innerHTML += `
+function estilosTextos() {
+    parrafo.className = "fuenteTexto";
+    tituloServicioSeleccionado.className = "estiloTitulo";
+}
+
+estilosTextos();
+
+function creandoBotones() {
+    divParaBotones.className = "ordenarBotones";
+    document.body.append(divParaBotones);
+    for (const servicio of servicios) {
+        divParaBotones.innerHTML += `
                                 <button id="${servicio.nombre.toLowerCase()}"><img class="imagenesPrueba" src="../img/${servicio.nombre}.png" alt="${servicio.nombre}"></button>
                                 `;
 
 
-    setTimeout(() => {
-        document.getElementById(servicio.nombre.toLowerCase()).addEventListener("click", () => {
-            respuestaClick(servicio.nombre.toLowerCase())
-        });
-    }, 500)
-
+        setTimeout(() => {
+            document.getElementById(servicio.nombre.toLowerCase()).addEventListener("click", () => {
+                respuestaClick(servicio.nombre.toLowerCase())
+            });
+        }, 500)
+    }
 }
 
-divParaBotones.className = "ordenarBotones";
-document.body.append(divParaBotones);
+creandoBotones();
+
+let adquirirServicio = "";
+
+function capturarImg(nombreDeServicio) {
+    if (nombreDeServicio === adquirirServicio.toLowerCase()) {
+        return `<img class="imagenesPrueba" src="../img/${nombreDeServicio.toLowerCase()}.png" alt="imagen">`
+    }
+    return console.log("no existe esa img");
+}
+
+function creandoBotonesServicios() {
+    for (const servicio of servicios) {
+        if (adquirirServicio.toLowerCase() === servicio.nombre.toLowerCase()) {
+            let foto = document.createElement('div');
+            foto.innerHTML = capturarImg(adquirirServicio.toLowerCase());
+            document.body.append(foto);
+        }
+    }
+}
+
+creandoBotonesServicios();
 
 function creandoInputDescuento() {
     let inputDescuentos = document.createElement("div");
     inputDescuentos.className = "centerInput"
-    inputDescuentos.innerHTML = `<form action="" id="formDescuento">
-<div class="mb-3">
-  <label for="ingresandoCodigo" class="form-label">Código de descuento</label>
-  <input type="password" class="form-control" id="ingresandoCodigo">
-</div>
-<button onclick="guardarCodigoDescuento()" type="button">Aplicar Descuento</button>
-</form>`;
+    inputDescuentos.innerHTML = `
+    <form action="" id="formDescuento">
+        <div class="mb-3">
+            <label for="ingresandoCodigo" class="form-label">Código de descuento</label>
+            <input type="password" class="form-control" id="ingresandoCodigo">
+        </div>
+        <button onclick="guardarCodigoDescuento()" id="btnAplicarDescuento" type="button">Aplicar Descuento</button>
+    </form>`;
     document.body.append(inputDescuentos);
-    contadorInputDescuento++
+}
+
+function codigoDescuentoFunction() {
+    let botonFinal = document.createElement("div");
+    botonFinal.className = "centerInput"
+    botonFinal.innerHTML = `<h2> Haga click en el carrito para mostrar el precio final </h2>
+        <button onclick="clickBotonFinal()" id="btnFinal" class="tamanoBoton" type="submit"><img class="achicandoImg" src="../img/carritoPrecioFinal.png" alt=""></button>`
+    document.body.append(botonFinal);
+    botonFinal.setAttribute("id", "btnCarrito");
+    document.getElementById("btnAplicarDescuento").disabled = true;
+    document.getElementById("formDescuento").reset();
+    document.getElementById("ingresandoCodigo").disabled = true;
 }
 
 function guardarCodigoDescuento() {
-    if (botonAccionado === 0) {
-        var descuentoIngresado = document.getElementById("ingresandoCodigo");
-        localStorage.setItem("ingresandoCodigo", descuentoIngresado.value);
-        let botonFinal = document.createElement("div");
-        botonFinal.className = "centerInput"
-        botonFinal.innerHTML = `<h2> Haga click en el carrito para mostrar el precio final </h2>
-        <button onclick="clickBotonFinal()" class="tamanoBoton" type="submit"><img class="achicandoImg" src="../img/carritoPrecioFinal.png" alt=""></button>`
-        document.body.append(botonFinal);
-        botonAccionado++;
+    var descuentoIngresado = document.getElementById("ingresandoCodigo");
+    localStorage.setItem("ingresandoCodigo", descuentoIngresado.value);
+    if (!document.getElementById("btnCarrito")) {
+        codigoDescuentoFunction();
     }
 }
 
+let desc = 0;
+
 function clickBotonFinal() {
-    if (desc === 0) {
-        desc = localStorage.getItem("ingresandoCodigo", desc.value);
-    }
+    desc = localStorage.getItem("ingresandoCodigo", desc.value);
     aplicandoDescuentos(desc);
+    document.getElementById("btnFinal").disabled = true;
 }
 
 function respuestaClick(servicio) {
-    if (contadorServicioSeleccionado === 0) {
-        adquirirServicio = servicio;
-        tituloServicioSeleccionado.innerHTML = `Usted ha elegido el servicio ${servicio.toLowerCase()}`;
-        document.body.append(tituloServicioSeleccionado);
-        contadorServicioSeleccionado++;
-    }
-    if (contadorInputDescuento === 0) {
-        creandoInputDescuento();
-    }
+    adquirirServicio = servicio;
+    tituloServicioSeleccionado.innerHTML = `Usted ha elegido el servicio ${servicio.toLowerCase()}`;
+    document.body.append(tituloServicioSeleccionado);
+    creandoInputDescuento();
+    document.getElementById("masajes").disabled = true;
+    document.getElementById("pestañas").disabled = true;
+    document.getElementById("manicura").disabled = true;
 }
 
 function aplicandoDescuentos(descuentoCodigo) {
@@ -146,20 +177,5 @@ function aplicandoDescuentos(descuentoCodigo) {
         const costeTotal = calcularIVA(servicios.find(servicio => servicio.nombre.toLowerCase() === adquirirServicio.toLowerCase()));
         parrafo.innerHTML = `El código de descuento ingresado no existe. Incluyendo el impuesto IVA, su contratación tendra un costo de: AR$${costeTotal}`;
         document.body.append(parrafo);
-    }
-}
-
-function capturarImg(nombreDeServicio) {
-    if (nombreDeServicio === adquirirServicio.toLowerCase()) {
-        return `<img class="imagenesPrueba" src="../img/${nombreDeServicio.toLowerCase()}.png" alt="imagen">`
-    }
-    return console.log("no existe esa img");
-}
-
-for (const servicio of servicios) {
-    if (adquirirServicio.toLowerCase() === servicio.nombre.toLowerCase()) {
-        let foto = document.createElement('div');
-        foto.innerHTML = capturarImg(adquirirServicio.toLowerCase());
-        document.body.append(foto);
     }
 }
