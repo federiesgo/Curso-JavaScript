@@ -47,16 +47,15 @@ const showModal = () => {
     agregandoListaAlModal();
 }
 
-
 function agregandoListaAlModal() {
     if (listaCompletaCarrito != null) {
-        listaCompletaCarrito.forEach(({ nombre, precio }, index) => {
+        listaCompletaCarrito.forEach(({ nombre, precio, cantidad }, index) => {
             var listaModal = document.getElementById('contenidoModalCarrito')
             listaModal.innerHTML += `
                         <tr>
                             <th scope="row">${index+1}</th>
-                            <td>${nombre}</td>
-                            <td></td>
+                            <td>${nombre}</td>                            
+                            <td>${cantidad}</td>                            
                             <td>${precio}</td>
                          </tr>  
         `
