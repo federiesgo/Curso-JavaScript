@@ -56,7 +56,7 @@ function agregandoListaAlModal() {
                             <th scope="row">${index+1}</th>
                             <td>${nombre}</td>                            
                             <td>${cantidad}</td>                            
-                            <td>${precio}</td>
+                            <td>$${precio}</td>
                          </tr>  
         `
         })
