@@ -13,14 +13,21 @@ body {
     margin: 0 auto;
 }
 
-header {
-    background: antiquewhite;
+// Empieza el header //
+#header {
+    background: transparent;
     color: #000000;
     padding: 1em 0;
-    position: relative;
+    position: fixed;
+    width: 100%;
+    -webkit-transition: all 0.65s ease-out;
+    -moz-transition: all 0.65s ease-out;
+    -o-transition: all 0.65s ease-out;
+    -ms-transition: all 0.65s ease-out;
+    transition: all 0.65s ease-out;
 }
 
-header::after {
+#header::after {
     content: '';
     clear: both;
     display: block;
@@ -38,8 +45,12 @@ header::after {
 .logo span {
     font-weight: 400;
     color: rgb(250, 60, 123);
-    font-style: italic;
     font-family: 'Oxygen', sans-serif;
+}
+
+.logo a {
+    text-decoration: none;
+    color: white;
 }
 
 .navCentrado {
@@ -80,17 +91,18 @@ header::after {
 }
 
 .site-nav a {
-    color: #000000;
+    color: #ffffff;
     display: block;
     padding: 2em 4em 2em 1.5em;
     text-transform: uppercase;
     text-decoration: none;
     font-family: 'Oxygen', sans-serif;
+    font-weight: bolder;
 }
 
 .site-nav a:hover,
 .site-nav a:focus {
-    color: rgb(250, 60, 123);
+    color: rgb(250, 60, 123) !important;
 }
 
 .site-nav--icon {
@@ -183,6 +195,25 @@ header::after {
     left: 0;
 }
 
+//Termina el header//
+//Empieza el video//
+.background-video {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    z-index: -100;
+    min-width: 100%;
+    min-height: 100%;
+    width: 100%;
+    height: auto;
+    transform: translate(-50%, -50%);
+    overflow: hidden;
+}
+
+//Termina el video//
+
+/* MEDIA QUERIES*/
+
 @media screen and (max-height: 300px) {
     .navUl {
         margin-top: 40px;
@@ -198,7 +229,7 @@ header::after {
     }
 }
 
-@media (min-width: 900px) {
+@media (min-width: 902px) {
     .menu-toggle {
         display: none;
     }
@@ -223,5 +254,13 @@ header::after {
     }
     .site-nav--icon {
         display: none;
+    }
+}
+
+@media (min-width: 768px) {
+    .container,
+    .container-md,
+    .container-sm {
+        max-width: 100% !important;
     }
 }
