@@ -38,6 +38,8 @@ body {
     text-transform: uppercase;
     font-weight: 700;
     font-family: 'Oxygen', sans-serif;
+    text-decoration: none !important;
+    --bs-link-hover-color: white;
 }
 
 .logo span {
