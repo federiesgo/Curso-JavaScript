@@ -4,7 +4,9 @@ $('.menu-toggle').click(function() {
     $(this).toggleClass('open');
 
 })
-
+$(document).ready(function() {
+    $(this).scrollTop(0);
+});
 
 // Media Queries para el efecto del header/navbar //
 
@@ -21,7 +23,7 @@ if ((window.innerWidth < 1024)) {;
 }
 
 //Laptop
-if (window.innerWidth === 1024) {
+if (window.innerWidth >= 1024 && window.innerWidth < 1280) {
     window.onscroll = function() { scrollFunction() }
 
     function scrollFunction() {
@@ -44,7 +46,7 @@ if (window.innerWidth === 1024) {
 }
 
 //Laptop L
-if (window.innerWidth === 1440) {
+if (window.innerWidth >= 1440 && window.innerWidth < 1920) {
     window.onscroll = function() { scrollFunction() }
 
     function scrollFunction() {
@@ -69,7 +71,7 @@ if (window.innerWidth === 1440) {
 
 
 //Nest Hub Max
-if (window.innerWidth === 1280) {
+if (window.innerWidth >= 1280 && window.innerWidth < 1440) {
     window.onscroll = function() { scrollFunction() }
 
     function scrollFunction() {
@@ -91,6 +93,7 @@ if (window.innerWidth === 1280) {
 
 //4K
 if (window.innerWidth === 2560) {
+    document.getElementById("contenedorVideoHeader").style.maxHeight = "785px"
     window.onscroll = function() { scrollFunction() }
 
     function scrollFunction() {
