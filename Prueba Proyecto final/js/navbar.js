@@ -5,22 +5,131 @@ $('.menu-toggle').click(function() {
 
 })
 
-window.onscroll = function() { scrollFunction() };
 
-function scrollFunction() {
-    if (document.body.scrollTop > 400 || document.documentElement.scrollTop > 400) {
-        document.getElementById("header").style.background = "antiquewhite";
-        document.getElementById("logoAnchor").style.color = "black"
-        let navA = document.getElementsByClassName("navA");
-        let navAElem;
-        modificandoElemsDeClass(navAElem, navA, "black")
+// Media Queries para el efecto del header/navbar //
 
-    } else {
-        document.getElementById("header").style.background = "transparent";
-        document.getElementById("logoAnchor").style.color = "white"
-        let navA = document.getElementsByClassName("navA");
-        let navAElem;
-        modificandoElemsDeClass(navAElem, navA, "white")
+
+//Tablets y celulares
+if ((window.innerWidth < 1024)) {;
+    document.getElementById("videoHeader").style.display = "none"
+    document.getElementById("header").style.background = "antiquewhite";
+    document.getElementById("header").style.position = "relative";
+    document.getElementById("logoAnchor").style.color = "black"
+    let navA = document.getElementsByClassName("navA");
+    let navAElem;
+    modificandoElemsDeClass(navAElem, navA, "black")
+}
+
+//Laptop
+if (window.innerWidth === 1024) {
+    window.onscroll = function() { scrollFunction() }
+
+    function scrollFunction() {
+        if (document.body.scrollTop > 175 || document.documentElement.scrollTop > 175) {
+            document.getElementById("header").style.background = "antiquewhite";
+            document.getElementById("logoAnchor").style.color = "black"
+            let navA = document.getElementsByClassName("navA");
+            let navAElem;
+            modificandoElemsDeClass(navAElem, navA, "black")
+
+        } else {
+            document.getElementById("header").style.background = "transparent";
+            document.getElementById("logoAnchor").style.color = "white"
+            let navA = document.getElementsByClassName("navA");
+            let navAElem;
+            modificandoElemsDeClass(navAElem, navA, "white")
+        }
+
+    }
+}
+
+//Laptop L
+if (window.innerWidth === 1440) {
+    window.onscroll = function() { scrollFunction() }
+
+    function scrollFunction() {
+        if (document.body.scrollTop > 275 || document.documentElement.scrollTop > 275) {
+            document.getElementById("header").style.background = "antiquewhite";
+            document.getElementById("logoAnchor").style.color = "black"
+            let navA = document.getElementsByClassName("navA");
+            let navAElem;
+            modificandoElemsDeClass(navAElem, navA, "black")
+
+        } else {
+            document.getElementById("header").style.background = "transparent";
+            document.getElementById("logoAnchor").style.color = "white"
+            let navA = document.getElementsByClassName("navA");
+            let navAElem;
+            modificandoElemsDeClass(navAElem, navA, "white")
+        }
+
+    }
+}
+
+
+
+//Nest Hub Max
+if (window.innerWidth === 1280) {
+    window.onscroll = function() { scrollFunction() }
+
+    function scrollFunction() {
+        if (document.body.scrollTop > 225 || document.documentElement.scrollTop > 225) {
+            document.getElementById("header").style.background = "antiquewhite";
+            document.getElementById("logoAnchor").style.color = "black"
+            let navA = document.getElementsByClassName("navA");
+            let navAElem;
+            modificandoElemsDeClass(navAElem, navA, "black")
+        } else {
+            document.getElementById("header").style.background = "transparent";
+            document.getElementById("logoAnchor").style.color = "white"
+            let navA = document.getElementsByClassName("navA");
+            let navAElem;
+            modificandoElemsDeClass(navAElem, navA, "white")
+        }
+    }
+}
+
+//4K
+if (window.innerWidth === 2560) {
+    window.onscroll = function() { scrollFunction() }
+
+    function scrollFunction() {
+        if (document.body.scrollTop > 595 || document.documentElement.scrollTop > 595) {
+            document.getElementById("header").style.background = "antiquewhite";
+            document.getElementById("logoAnchor").style.color = "black"
+            let navA = document.getElementsByClassName("navA");
+            let navAElem;
+            modificandoElemsDeClass(navAElem, navA, "black")
+
+        } else {
+            document.getElementById("header").style.background = "transparent";
+            document.getElementById("logoAnchor").style.color = "white"
+            let navA = document.getElementsByClassName("navA");
+            let navAElem;
+            modificandoElemsDeClass(navAElem, navA, "white")
+        }
+
+    }
+}
+
+//Escritorio 1920x1080
+if (window.innerWidth === 1920) {
+    window.onscroll = function() { scrollFunction() }
+
+    function scrollFunction() {
+        if (document.body.scrollTop > 400 || document.documentElement.scrollTop > 400) {
+            document.getElementById("header").style.background = "antiquewhite";
+            document.getElementById("logoAnchor").style.color = "black"
+            let navA = document.getElementsByClassName("navA");
+            let navAElem;
+            modificandoElemsDeClass(navAElem, navA, "black")
+        } else {
+            document.getElementById("header").style.background = "transparent";
+            document.getElementById("logoAnchor").style.color = "white"
+            let navA = document.getElementsByClassName("navA");
+            let navAElem;
+            modificandoElemsDeClass(navAElem, navA, "white")
+        }
     }
 }
 
