@@ -194,7 +194,8 @@ body {
 //Termina el header//
 //Empieza el video//
 #contenedorVideoHeader {
-    //agregar margin-bot -450 para desktop
+    width: 100%;
+    max-height: 700px;
 }
 
 .background-video {

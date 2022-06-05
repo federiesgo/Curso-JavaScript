@@ -204,6 +204,11 @@ body {
   left: 0;
 }
 
+#contenedorVideoHeader {
+  width: 100%;
+  max-height: 700px;
+}
+
 .background-video {
   position: relative;
   top: 50%;
