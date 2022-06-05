@@ -1,4 +1,3 @@
-/* colors -> https://coolors.co/e54b4b-ebebd3-464655-e4b363-e8e9eb */
 @import url("https://fonts.googleapis.com/css?family=Quicksand:400,700");
 @import url("https://fonts.googleapis.com/css2?family=Oxygen&display=swap");
 body {
@@ -73,13 +72,11 @@ body {
   transition: -webkit-clip-path ease-in-out 700ms;
   transition: clip-path ease-in-out 700ms;
   transition: clip-path ease-in-out 700ms, -webkit-clip-path ease-in-out 700ms;
-  /*   display: none; */
 }
 
 .site-nav--open {
   -webkit-clip-path: circle(250% at top right);
           clip-path: circle(250% at top right);
-  /*   display: block; */
 }
 
 .site-nav ul {
