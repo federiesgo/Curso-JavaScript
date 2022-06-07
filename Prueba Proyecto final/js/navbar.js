@@ -12,7 +12,8 @@ $(document).ready(function() {
 
 
 //Tablets y celulares
-if ((window.innerWidth < 1024)) {;
+if ((window.innerWidth < 1024)) {
+    document.getElementById("header").style.marginBottom = "75px"
     document.getElementById("videoHeader").style.display = "none"
     document.getElementById("header").style.background = "antiquewhite";
     document.getElementById("header").style.position = "relative";
