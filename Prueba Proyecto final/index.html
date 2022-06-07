@@ -22,7 +22,7 @@
                     <li class="navLi"><a href="#home" class="navA"><i class="site-nav--icon"></i>Home</a></li>
                     <li class="navLi"><a href="#servicios" class="navA"><i class="site-nav--icon"></i>Servicios</a></li>
                     <li class="navLi"><a href="#contactanos" class="navA"><i class="site-nav--icon"></i>Contacto</a></li>
-                    <li class="navLi"><a href="" class="navA"><i class="site-nav--icon"></i>Carrito</a></li>
+                    <li class="navLi"><a class="navA cursorPointer" id="carritoNav" onclick="showModal()"><i class="site-nav--icon"></i>Carrito</a></li>
                 </ul>
             </nav>
             <div class="menu-toggle">
@@ -37,89 +37,65 @@
     <section id="home" class="primeraSection">
         <h2>Bienvenido a tu casa, lejos de casa</h2>
         <h1>RELAJATE, RECUPERATE, REVIVE</h1>
-        <p> Cupcake ipsum dolor sit. Amet tootsie roll candy candy canes jelly beans bear claw toffee gingerbread danish. Tart cheesecake candy danish macaroon apple pie soufflé. Lemon drops halvah dragée marshmallow tiramisu topping. Ice cream ice cream
-            bear claw. Marshmallow lemon drops bonbon oat cake cupcake sesame snaps bonbon cake. Cake topping biscuit carrot cake toffee dessert lollipop tiramisu. Donut danish cotton candy candy macaroon chocolate bar ice cream. </p>
+        <p> Somos un espacio dedicado especialmente al cuidado de tu salud y belleza. Te ofrecemos una atencion personalizada y profesional. <br> Tenemos los mejores especialistas a tu disposición. Expertos en extensiones de pestañas y masajes de todo tipo.
+            <br> Además proveemos servicios de manicura para el dia a dia o arte custom para eventos especiales. <br> ¡Solicita tu turno!
+        </p>
     </section>
 
     <section class="segundaSection">
-        <img src="./img/separadorSections.png" alt="">
+        <img id="separadorSection1" src="./img/separadorSections.png" alt="">
     </section>
 
     <section class="terceraSection">
         <h1 id="servicios" class="pb-5">CONOCE NUESTROS SERVICIOS</h1>
-
         <div class="container">
-            <!-- Card deck -->
             <div class="card-deck row">
-                <div class="col-xs-12 col-sm-6 col-md-4">
-                    <!-- Card -->
+                <div class="col-xs-12 col-sm-12 col-md-4">
                     <div class="card">
-                        <!--Card image-->
                         <div class="view overlay">
                             <img class="card-img-top" src="./img/pestañasImg.jpg" alt="Servicio pestañas">
                         </div>
-                        <!--Card content-->
                         <div class="card-body">
-                            <!--Title-->
                             <h4 class="card-title">PESTAÑAS</h4>
-                            <!--Text-->
                             <p class="card-text">Las extensiones de pestañas mejoran la longitud y curvatura de las mismas. Pueden ser hechas de varios materiales que incluyen sintético y seda.</p>
-                            <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
-                            <button type="button" class="btn btn-light-blue btn-md">Contratar servicio</button>
+                            <button onclick="consultarServicio('pestañas')" type="button" class="btn btn-light-blue btn-md">Contratar servicio</button>
                         </div>
                     </div>
-                    <!-- Card -->
                 </div>
-                <div class="col-xs-12 col-sm-6 col-md-4">
-                    <!-- Card -->
+                <div class="col-xs-12 col-sm-12 col-md-4">
                     <div class="card">
-                        <!--Card image-->
                         <div class="view overlay">
                             <img class="card-img-top imgServicios" src="./img/masajesImg.jpg" alt="Servicio masajes">
                         </div>
-                        <!--Card content-->
                         <div class="card-body">
-                            <!--Title-->
                             <h4 class="card-title">MASAJES</h4>
-                            <!--Text-->
                             <p class="card-text">En nuestro salon puedes probar numerosas técnicas, desde las clásicas hasta masajes indios y romanos.</p>
-                            <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
-                            <button type="button" class="btn btn-light-blue btn-md">Contratar servicio</button>
+                            <button onclick="consultarServicio('masajes')" type="button" class="btn btn-light-blue btn-md">Contratar servicio</button>
                         </div>
                     </div>
-                    <!-- Card -->
                 </div>
-                <div class="col-xs-12 col-sm-6 col-md-4">
-                    <!-- Card -->
+                <div class="col-xs-12 col-sm-12 col-md-4">
                     <div class="card">
-                        <!--Card image-->
                         <div class="view overlay">
                             <img class="card-img-top" src="./img/manicuraImg.jpg" alt="Servicio manicura">
                         </div>
-                        <!--Card content-->
                         <div class="card-body">
-                            <!--Title-->
                             <h4 class="card-title">MANICURA</h4>
-                            <!--Text-->
                             <p class="card-text">Los materiales con los que se esculpe la uña principalmente son: acrílico, gel, acrilgel. Ocasionalmente también se utiliza fibra de vidrio o de porcelana.</p>
-                            <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
-                            <button type="button" class="btn btn-light-blue btn-md">Contratar servicio</button>
+                            <button onclick="consultarServicio('manicura')" type="button" class="btn btn-light-blue btn-md">Contratar servicio</button>
                         </div>
                     </div>
-                    <!-- Card -->
                 </div>
             </div>
         </div>
-
     </section>
 
     <section class="segundaSection pb-5">
         <img src="./img/separadorSections2.png" alt="">
     </section>
 
-
     <section id="contactanos" class="cuartaSection">
-        <h1>CONTACTANOS</h1>
+        <h1>CONTACTO</h1>
         <div class="container">
             <div class="row bodyForm fondoBody">
                 <div class="containerForm col-xxl-6 col-xl-6 col-lg-6 col-md-12 col-sm-12">
@@ -165,7 +141,7 @@
         </div>
         <span class="border-shape"></span>
         <div class="bottom_content">
-            <section>
+            <section id="logosRRSS">
                 <a href="https://www.facebook.com/EMPAR-Dise%C3%B1o-y-Belleza-1511007562542622"><i class="fa fa-facebook"></i></a>
                 <a href="https://www.instagram.com/empar.ok/"><i class="fa fa-instagram"></i></a>
             </section>
@@ -175,17 +151,12 @@
         </div>
     </footer>
 
-
-
-
-
-
-
-
-
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="./js/navbar.js"></script>
+    <script src="./js/modalCarrito.js"></script>
+    <script src="./js/eligiendoServicios.js"></script>
 </body>
 
 </html>
