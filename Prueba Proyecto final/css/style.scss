@@ -208,6 +208,11 @@ body {
     left: 0;
 }
 
+//Carrito
+.cursorPointer {
+    cursor: pointer;
+}
+
 //Termina el header//
 //Empieza el video//
 #contenedorVideoHeader {
@@ -246,7 +251,6 @@ body {
         font-weight: 600;
         padding-top: 70px;
         font-size: 20px;
-        width: 70ch;
         margin: 0 auto;
     }
 }
@@ -311,6 +315,10 @@ body {
         color: rgb(0, 0, 0);
         font-weight: bolder;
     }
+}
+
+#separadorSection1 {
+    width: 500px
 }
 
 //Contacto
@@ -442,6 +450,10 @@ fieldset {
 
 /*FOOTER*/
 
+#logosRRSS {
+    text-align: center;
+}
+
 footer {
     width: 100%;
     background-color: #121619;
@@ -543,6 +555,9 @@ footer .bottom_content section {
 }
 
 @media (max-width: 900px) {
+    #separadorSection1 {
+        width: 300px
+    }
     .navA {
         color: aliceblue !important;
     }
