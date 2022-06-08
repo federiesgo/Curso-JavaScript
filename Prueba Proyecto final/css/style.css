@@ -4,7 +4,7 @@
 body {
   background: #F0F8EA;
   font-family: 'Quicksand', sans-serif;
-  scroll-behavior: smooth;
+  scroll-behavior: smooth !important;
 }
 
 #contactanos {
@@ -301,6 +301,7 @@ body {
 .card h4 {
   font-weight: 900;
   font-size: 30px;
+  color: #f59cad;
 }
 
 .card p {
@@ -580,6 +581,20 @@ footer .bottom_content section {
 }
 
 /* MEDIA QUERIES*/
+@media screen and (max-width: 1670px) {
+  #contenedorVideoHeader {
+    width: 100%;
+    max-height: 500px;
+  }
+}
+
+@media screen and (max-width: 1450px) {
+  #contenedorVideoHeader {
+    width: 100%;
+    max-height: 450px;
+  }
+}
+
 @media screen and (max-height: 300px) {
   .navUl {
     margin-top: 40px;
@@ -588,7 +603,7 @@ footer .bottom_content section {
 
 @media (max-width: 900px) {
   #separadorSection1 {
-    width: 300px;
+    width: 250px;
   }
   .navA {
     color: aliceblue !important;
@@ -598,7 +613,20 @@ footer .bottom_content section {
   }
 }
 
-@media (min-width: 900px) {
+@media (max-width: 1700px) {
+  .card-text {
+    min-height: 72px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1250px) {
+  .card-text {
+    min-height: 144px;
+    max-height: 160px;
+  }
+}
+
+@media (min-width: 1000px) {
   .menu-toggle {
     display: none;
   }
