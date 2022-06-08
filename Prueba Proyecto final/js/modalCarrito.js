@@ -1,6 +1,6 @@
-var modalWrap = null;
+let modalWrap = null;
 
-var listaCompletaCarrito = [];
+let listaCompletaCarrito = [];
 
 const showModal = () => {
     listaCompletaCarrito = JSON.parse(localStorage.getItem('PRODUCTOS'));
@@ -42,7 +42,7 @@ const showModal = () => {
     `;
 
     document.body.append(modalWrap);
-    var modal = new bootstrap.Modal(modalWrap.querySelector('.modal'));
+    let modal = new bootstrap.Modal(modalWrap.querySelector('.modal'));
     modal.show();
     agregandoListaAlModal();
 }
@@ -50,7 +50,7 @@ const showModal = () => {
 function agregandoListaAlModal() {
     if (listaCompletaCarrito != null) {
         listaCompletaCarrito.forEach(({ nombre, precio, cantidad }, index) => {
-            var listaModal = document.getElementById('contenidoModalCarrito')
+            let listaModal = document.getElementById('contenidoModalCarrito')
             listaModal.innerHTML += `
                         <tr>
                             <th scope="row">${index+1}</th>
@@ -64,7 +64,7 @@ function agregandoListaAlModal() {
 }
 
 function limpiarCarrito() {
-    var lista = document.getElementById('contenidoModalCarrito');
+    let lista = document.getElementById('contenidoModalCarrito');
     lista.innerHTML = "";
     localStorage.clear();
     listaCompletaCarrito = [];
