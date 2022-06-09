@@ -217,20 +217,19 @@ body {
 //Empieza el video//
 #contenedorVideoHeader {
     width: 100%;
-    max-height: 700px;
 }
 
 .background-video {
     position: relative;
-    top: 50%;
-    left: 50%;
     z-index: -100;
     min-width: 100%;
     min-height: 100%;
     width: 100%;
     height: auto;
-    transform: translate(-50%, -50%);
     overflow: hidden;
+    object-fit: cover;
+    max-height: 500px;
+    margin-bottom: 85px;
 }
 
 //Termina el video//
@@ -543,20 +542,6 @@ footer .bottom_content section {
 
 
 /* MEDIA QUERIES*/
-
-@media screen and (max-width: 1670px) {
-    #contenedorVideoHeader {
-        width: 100%;
-        max-height: 500px;
-    }
-}
-
-@media screen and (max-width: 1450px) {
-    #contenedorVideoHeader {
-        width: 100%;
-        max-height: 450px;
-    }
-}
 
 @media screen and (max-height: 300px) {
     .navUl {
