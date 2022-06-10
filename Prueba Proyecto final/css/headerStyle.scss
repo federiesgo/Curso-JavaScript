@@ -1,0 +1,208 @@
+// Empieza el header //
+#header {
+    z-index: 999;
+    background: transparent;
+    color: #000000;
+    padding: 1em 0;
+    position: fixed;
+    width: 100%;
+    -webkit-transition: all 0.65s ease-out;
+    -moz-transition: all 0.65s ease-out;
+    -o-transition: all 0.65s ease-out;
+    -ms-transition: all 0.65s ease-out;
+    transition: all 0.65s ease-out;
+}
+
+#header::after {
+    content: '';
+    clear: both;
+    display: block;
+}
+
+.logo {
+    float: left;
+    font-size: 2.5rem;
+    margin: 0;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-family: 'Oxygen', sans-serif;
+    text-decoration: none !important;
+    --bs-link-hover-color: white;
+}
+
+.logo span {
+    font-weight: 700;
+    color: rgb(250, 60, 123);
+    font-family: 'Oxygen', sans-serif;
+}
+
+.logo a {
+    text-decoration: none;
+    color: white;
+}
+
+.navCentrado {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.site-nav {
+    position: absolute;
+    top: 100%;
+    right: 0%;
+    background: #464655;
+    clip-path: circle(0px at top right);
+    transition: clip-path ease-in-out 700ms;
+}
+
+.site-nav--open {
+    clip-path: circle(250% at top right);
+}
+
+.site-nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.site-nav li {
+    border-bottom: 1px solid #575766;
+}
+
+.site-nav li:last-child {
+    border-bottom: none;
+}
+
+.site-nav a {
+    color: #ffffff;
+    display: block;
+    padding: 2em 4em 2em 1.5em;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-family: 'Oxygen', sans-serif;
+    font-weight: bolder;
+}
+
+.site-nav a:hover,
+.site-nav a:focus {
+    color: rgb(250, 60, 123) !important;
+}
+
+.site-nav--icon {
+    display: inline-block;
+    font-size: 1.5em;
+    margin-right: 1em;
+    width: 1.1em;
+    text-align: right;
+    color: rgba(255, 255, 255, .4);
+}
+
+.menu-toggle {
+    padding: 1em;
+    position: absolute;
+    top: .5em;
+    right: .5em;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+.hamburger,
+.hamburger::before,
+.hamburger::after {
+    content: '';
+    display: block;
+    background: #000000;
+    height: 3px;
+    width: 1.75em;
+    border-radius: 3px;
+    transition: all ease-in-out 500ms;
+}
+
+.hamburger::before {
+    transform: translateY(-6px);
+}
+
+.hamburger::after {
+    transform: translateY(3px);
+}
+
+.open .hamburger {
+    transform: rotate(45deg);
+}
+
+.open .hamburger::before {
+    opacity: 0;
+}
+
+.open .hamburger::after {
+    transform: translateY(-3px) rotate(-90deg);
+}
+
+.navUl {
+    margin: 150px auto 0;
+    padding: 0;
+    list-style: none;
+    width: 700px;
+    text-align: center;
+}
+
+.navLi {
+    position: relative;
+    padding: 15px 0;
+}
+
+.navA {
+    color: rgb(250, 60, 123);
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 0.15em;
+    padding: 15px 20px;
+    position: relative;
+}
+
+.navA:after {
+    background: none repeat scroll 0 0 transparent;
+    bottom: 0;
+    content: "";
+    display: block;
+    height: 2px;
+    left: 50%;
+    position: absolute;
+    background: rgb(250, 60, 123);
+    transition: width 0.3s ease 0s, left 0.3s ease 0s;
+    width: 0;
+}
+
+.navA:hover:after {
+    width: 100%;
+    left: 0;
+}
+
+//Carrito
+.cursorPointer {
+    cursor: pointer;
+}
+
+//Termina el header//
+//Empieza el video//
+#contenedorVideoHeader {
+    width: 100%;
+}
+
+.background-video {
+    position: relative;
+    z-index: -100;
+    min-width: 100%;
+    min-height: 100%;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    object-fit: cover;
+    max-height: 500px;
+    margin-bottom: 85px;
+}
+
+//Termina el video//
