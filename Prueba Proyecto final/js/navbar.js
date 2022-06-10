@@ -34,7 +34,6 @@ if (window.innerWidth >= 1024 && window.innerWidth < 1280) {
             let navA = document.getElementsByClassName("navA");
             let navAElem;
             modificandoElemsDeClass(navAElem, navA, "black")
-
         } else {
             document.getElementById("header").style.background = "transparent";
             document.getElementById("logoAnchor").style.color = "white"
@@ -42,7 +41,6 @@ if (window.innerWidth >= 1024 && window.innerWidth < 1280) {
             let navAElem;
             modificandoElemsDeClass(navAElem, navA, "white")
         }
-
     }
 }
 
@@ -57,7 +55,6 @@ if (window.innerWidth >= 1440 && window.innerWidth < 1920) {
             let navA = document.getElementsByClassName("navA");
             let navAElem;
             modificandoElemsDeClass(navAElem, navA, "black")
-
         } else {
             document.getElementById("header").style.background = "transparent";
             document.getElementById("logoAnchor").style.color = "white"
@@ -65,11 +62,8 @@ if (window.innerWidth >= 1440 && window.innerWidth < 1920) {
             let navAElem;
             modificandoElemsDeClass(navAElem, navA, "white")
         }
-
     }
 }
-
-
 
 //Nest Hub Max
 if (window.innerWidth >= 1280 && window.innerWidth < 1440) {
@@ -104,7 +98,6 @@ if (window.innerWidth === 2560) {
             let navA = document.getElementsByClassName("navA");
             let navAElem;
             modificandoElemsDeClass(navAElem, navA, "black")
-
         } else {
             document.getElementById("header").style.background = "transparent";
             document.getElementById("logoAnchor").style.color = "white"
@@ -112,7 +105,6 @@ if (window.innerWidth === 2560) {
             let navAElem;
             modificandoElemsDeClass(navAElem, navA, "white")
         }
-
     }
 }
 
