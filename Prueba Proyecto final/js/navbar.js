@@ -1,9 +1,12 @@
+//Hamburguesa
 $('.menu-toggle').click(function() {
 
     $('.site-nav').toggleClass('site-nav--open', 500);
     $(this).toggleClass('open');
 
 })
+
+// Ubicar la pagina en top cuando se hace un refresh
 $(document).ready(function() {
     $(this).scrollTop(0);
 });
@@ -129,6 +132,7 @@ if (window.innerWidth === 1920) {
     }
 }
 
+//Para cambiar el color de cada uno de los elementos del navbar (de blanco a negro)
 function modificandoElemsDeClass(elem, clase, colorElegido) {
     for (elem = 0; elem < clase.length; elem++) {
         clase[elem].style.color = colorElegido;
