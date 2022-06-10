@@ -101,23 +101,23 @@
             <div class="container">
                 <div class="row bodyForm fondoBody">
                     <div class="containerForm col-xxl-6 col-xl-6 col-lg-6 col-md-12 col-sm-12">
-                        <form id="contact" action="" method="post">
+                        <form id="contact">
                             <h3 style="color: #f4acb7">Formulario de contacto</h3>
                             <h4>Responderemos dentro de 24hs!</h4>
                             <fieldset>
-                                <input placeholder="Nombre y apellido" type="text" tabindex="1" required autofocus>
+                                <input id="nombreContacto" placeholder="Nombre y apellido" type="text" required />
                             </fieldset>
                             <fieldset>
-                                <input placeholder="Email" type="email" tabindex="2" required>
+                                <input id="mailContacto" placeholder="Email" type="email" required />                                                              
                             </fieldset>
                             <fieldset>
-                                <input placeholder="Telefono" type="tel" tabindex="3" required>
+                                <input id="telefonoContacto" placeholder="Telefono" type="tel" required />
                             </fieldset>
                             <fieldset>
-                                <textarea placeholder="Escribe un mensaje aqui...." tabindex="5" required></textarea>
+                                <textarea id="mensajeContacto" placeholder="Escribe un mensaje aqui.... (opcional)"></textarea>
                             </fieldset>
                             <fieldset>
-                                <button name="submit" type="reset" id="contact-submit" data-submit="...Enviando">Submit</button>
+                                <button onclick="submitFormulario()" name="submit" type="submit" id="contact-submit" data-submit="...Enviando">Enviar</button>
                             </fieldset>
                         </form>
                     </div>
@@ -160,6 +160,7 @@
     <script src="./js/navbar.js"></script>
     <script src="./js/modalCarrito.js"></script>
     <script src="./js/eligiendoServicios.js"></script>
+    <script src="./js/completandoFormulario.js"></script>
 </body>
 
 </html>
