@@ -14,16 +14,12 @@ const showModal = () => {
     <!-- Modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-lg"> 
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title">Carrito de compras</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
+        <div class="modal-content">          
+          <div class="modal-body">          
                 <table class="table">
                 <thead>
                        <tr>
-                           <th scope="col">#</th>
+                           <th scope="col"></th>
                            <th scope="col">Servicio</th>
                            <th scope="col">Cantidad</th>
                            <th scope="col">Total</th>
@@ -35,12 +31,28 @@ const showModal = () => {
                 </table>
           </div>
           <div>
-            <form id="finalizarCompra">
-              <input id="mailComprador" placeholder="Ingrese su mail" type="email" required />
-              <button type="reset" class="btn btn-primary" onclick="finalizarCompra()">Finalizar compra</button>
-            </form>
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-secondary" onclick="limpiarCarrito()">Vaciar carrito</button>
+          <div class="container">
+                <div class="row bodyForm fondoBody">
+                    <div class="containerForm col-xxl-6 col-xl-6 col-lg-6 col-md-12 col-sm-12">
+                        <form id="contact">                            
+                            <fieldset>
+                                <input id="mailComprador" placeholder="Ingrese su email" type="email" required />
+                            </fieldset>                     
+                            <fieldset>
+                                <button onclick="finalizarCompra()" name="submit" type="reset" id="contact-submit" data-submit="...Enviando">Finalizar compra</button>
+                            </fieldset>
+                            <div class="containerForm col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-6">
+                              <fieldset>
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                              </fieldset>
+                              <fieldset>
+                                <button type="button" class="btn btn-secondary" onclick="limpiarCarrito()">Vaciar carrito</button>
+                              </fieldset>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+          </div>        
           </div>
         </div>
       </div>
@@ -61,7 +73,7 @@ function agregandoListaAlModal() {
                         <tr>
                             <th scope="row">${index+1}</th>
                             <td>${nombre}</td>                            
-                            <td>${cantidad}</td>                            
+                            <td>${cantidad} Sesion/es</td>                            
                             <td>$${precio}</td>
                          </tr>  
         `

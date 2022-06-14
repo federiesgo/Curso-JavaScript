@@ -22,6 +22,13 @@ function submitFormulario() {
             formularioLocalStorage.push(datosPersonaFormulario);
             localStorage.setItem("FORMULARIO", JSON.stringify(formularioLocalStorage));
             document.getElementById("contact").reset();
+            Swal.fire({
+                position: 'center',
+                icon: 'success',
+                title: 'En breve nos pondremos en contacto.',
+                showConfirmButton: false,
+                timer: 2500
+            })
         }
     }
 }
