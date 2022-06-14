@@ -1,3 +1,5 @@
+let regex2 = new RegExp("([!#-'*+/-9=?A-Z^-~-]+(\.[!#-'*+/-9=?A-Z^-~-]+)*|\"\(\[\]!#-[^-~ \t]|(\\[\t -~]))+\")@([!#-'*+/-9=?A-Z^-~-]+(\.[!#-'*+/-9=?A-Z^-~-]+)*|\[[\t -Z^-~]*])");
+
 let formularioLocalStorage = [];
 
 class constructorFormulario {
@@ -10,14 +12,16 @@ class constructorFormulario {
     }
 }
 
-function submitFormulario () {    
-    formularioLocalStorage = JSON.parse(localStorage.getItem("FORMULARIO")) || [];    
+function submitFormulario() {
+    formularioLocalStorage = JSON.parse(localStorage.getItem("FORMULARIO")) || [];
     let datosPersonaFormulario = new constructorFormulario(document.getElementById("nombreContacto").value, document.getElementById("mailContacto").value,
-    document.getElementById("telefonoContacto").value, document.getElementById("mensajeContacto").value, formularioLocalStorage.length+1);        
-    
-    if(datosPersonaFormulario.nombre != "" && datosPersonaFormulario.mail != "" && datosPersonaFormulario.telefono != ""){ 
-        formularioLocalStorage.push(datosPersonaFormulario);              
-        localStorage.setItem("FORMULARIO", JSON.stringify(formularioLocalStorage));
-        document.getElementById("contact").reset();
-    }    
+        document.getElementById("telefonoContacto").value, document.getElementById("mensajeContacto").value, formularioLocalStorage.length + 1);
+
+    if (datosPersonaFormulario.nombre != "" && datosPersonaFormulario.mail != "" && datosPersonaFormulario.telefono != "") {
+        if (regex2.test(datosPersonaFormulario.mail)) {
+            formularioLocalStorage.push(datosPersonaFormulario);
+            localStorage.setItem("FORMULARIO", JSON.stringify(formularioLocalStorage));
+            document.getElementById("contact").reset();
+        }
+    }
 }
