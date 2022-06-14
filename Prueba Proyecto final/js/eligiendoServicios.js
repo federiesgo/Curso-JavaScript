@@ -21,7 +21,13 @@ function consultarServicio(nombreDelServicio) {
         showCancelButton: true,
         confirmButtonColor: '#3085d6',
         cancelButtonColor: '#d33',
-        confirmButtonText: 'Agregar al carrito'
+        confirmButtonText: 'Agregar al carrito',
+        showClass: {
+            popup: 'animate__animated animate__fadeInDown'
+        },
+        hideClass: {
+            popup: 'animate__animated animate__fadeOutUp'
+        }
     }).then((result) => {
         if (result.isConfirmed) {
             Swal.fire(
