@@ -28,17 +28,15 @@
     font-family: 'Oxygen', sans-serif;
     text-decoration: none !important;
     --bs-link-hover-color: white;
-}
-
-.logo span {
-    font-weight: 700;
-    color: rgb(250, 60, 123);
-    font-family: 'Oxygen', sans-serif;
-}
-
-.logo a {
-    text-decoration: none;
-    color: white;
+    span {
+        font-weight: 700;
+        color: rgb(250, 60, 123);
+        font-family: 'Oxygen', sans-serif;
+    }
+    a {
+        text-decoration: none;
+        color: white;
+    }
 }
 
 .navCentrado {
@@ -56,34 +54,31 @@
     background: #464655;
     clip-path: circle(0px at top right);
     transition: clip-path ease-in-out 700ms;
+    ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+    li {
+        border-bottom: 1px solid #575766;
+    }
+    a {
+        color: #ffffff;
+        display: block;
+        padding: 2em 4em 2em 1.5em;
+        text-transform: uppercase;
+        text-decoration: none;
+        font-family: 'Oxygen', sans-serif;
+        font-weight: bolder;
+    }
 }
 
 .site-nav--open {
     clip-path: circle(250% at top right);
 }
 
-.site-nav ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
-
-.site-nav li {
-    border-bottom: 1px solid #575766;
-}
-
 .site-nav li:last-child {
     border-bottom: none;
-}
-
-.site-nav a {
-    color: #ffffff;
-    display: block;
-    padding: 2em 4em 2em 1.5em;
-    text-transform: uppercase;
-    text-decoration: none;
-    font-family: 'Oxygen', sans-serif;
-    font-weight: bolder;
 }
 
 .site-nav a:hover,
