@@ -18,15 +18,9 @@
 #contact input[type="tel"],
 #contact input[type="url"],
 #contact textarea,
-#contact button[type="submit"] {
-  font: 400 12px/16px "Open Sans", Helvetica, Arial, sans-serif;
-}
-
-#contact button[type="button"] {
-  font: 400 12px/16px "Open Sans", Helvetica, Arial, sans-serif;
-}
-
-#contact button[type="reset"] {
+#contact button[type="submit"],
+button[type="button"],
+button[type="reset"] {
   font: 400 12px/16px "Open Sans", Helvetica, Arial, sans-serif;
 }
 

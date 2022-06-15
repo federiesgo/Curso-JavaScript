@@ -25,7 +25,7 @@ body {
     margin: 0 auto;
 }
 
-//Empieza primera section//
+//Secciones//
 .primeraSection {
     font-family: "Poiret One", sans-serif;
     text-align: center;
@@ -128,22 +128,19 @@ footer {
     align-items: center;
     justify-content: center;
     position: relative;
-}
-
-.top_header section {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-}
-
-.top_header span {
-    padding: 0 1rem;
-}
-
-.top_header .fa {
-    color: #f3c7cd;
-    font-size: 35px;
+    section {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+    span {
+        padding: 0 1rem;
+    }
+    .fa {
+        color: #f3c7cd;
+        font-size: 35px;
+    }
 }
 
 footer .border-shape {
@@ -207,7 +204,6 @@ footer .bottom_content section {
     }
 }
 
-//CARRITO MODAL//
 
 /* MEDIA QUERIES*/
 

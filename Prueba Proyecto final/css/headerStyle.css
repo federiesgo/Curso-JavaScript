@@ -64,11 +64,6 @@
   transition: clip-path ease-in-out 700ms, -webkit-clip-path ease-in-out 700ms;
 }
 
-.site-nav--open {
-  -webkit-clip-path: circle(250% at top right);
-          clip-path: circle(250% at top right);
-}
-
 .site-nav ul {
   margin: 0;
   padding: 0;
@@ -79,10 +74,6 @@
   border-bottom: 1px solid #575766;
 }
 
-.site-nav li:last-child {
-  border-bottom: none;
-}
-
 .site-nav a {
   color: #ffffff;
   display: block;
@@ -91,6 +82,15 @@
   text-decoration: none;
   font-family: 'Oxygen', sans-serif;
   font-weight: bolder;
+}
+
+.site-nav--open {
+  -webkit-clip-path: circle(250% at top right);
+          clip-path: circle(250% at top right);
+}
+
+.site-nav li:last-child {
+  border-bottom: none;
 }
 
 .site-nav a:hover,
